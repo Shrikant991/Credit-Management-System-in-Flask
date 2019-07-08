@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+		<!DOCTYPE html>
+	<html>
+	<head>
+	<style>
+	table {
+	  font-family: arial, sans-serif;
+	  border-collapse: collapse;
+	  width: 100%;
+	}
+
+	td, th {
+	  border: 1px solid #dddddd;
+	  text-align: left;
+	  padding: 8px;
+	}
+
+	tr:nth-child(even) {
+	  background-color: #dddddd;
+	}
+	</style>
+	</head>
+	<body>
+
+	<h2>Transaction History</h2>
+
+	<table>
+	  <tr>
+	    <th>Sent By</th>
+	    <th>Recieved By</th>
+	    <th>Credit Transfered</th>
+	  </tr>
+	    {% for person in myPersons %}
+	    <tr>
+		    <td>{{person.sentby}}</td>
+		    <td>{{person.recievedby}}</td>
+		    <td>{{person.transfer}}</td>
+		</tr>
+	    {% endfor %}
+	  
+	</table>
+
+	</body>
+	</html>
+{% endblock %}

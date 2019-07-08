@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	<div class="jumbotron text-center">
+    	<h1>{{myPersons.username}}</h1>
+    	<p class="lead">Email : {{myPersons.email}}</p>
+    	<p class="lead">Current Credit : {{myPersons.credit}}</p>
+	</div>
+	<div class="content-section">
+        <form method="POST" action="">
+        	{{ form.hidden_tag() }}
+        	<fieldset class="form-group">
+	        	<div class="form-group">
+	                    {{ form.user.label(class="form-control-label") }}
+	                    {{ form.user(class="form-control form-control-lg") }}
+	            </div>
+	        </fieldset>
+        	<fieldset class="form-group">
+	        	<div class="form-group">
+	                    {{ form.transfer.label(class="form-control-label") }}
+	                    {{ form.transfer(class="form-control form-control-lg") }}
+	            </div>
+	        </fieldset>
+	        <div class="form-group">
+	        	{{form.submit(class="btn-outline-info")}}
+	        </div>
+	    </form>
+	</div>
+{% endblock %}
